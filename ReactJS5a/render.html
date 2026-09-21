@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML + JavaScript Rendering</title>
+<style>
+body {
+font-family: Arial, sans-serif; margin: 40px;
+background-color: #f4f4f4;
+}
+#content { padding: 20px;
+background-color: #fff; border-radius: 8px;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+ 
+h1 {
+color: #333;
+}
+h2 {
+color: #0077cc;
+}
+</style>
+</head>
+<body>
+<h1>My Web Page</h1>
+<p>This is static HTML content.</p>
+<div id="content">
+</div>
+<script>
+const contentDiv = document.getElementById('content'); const newSection = document.createElement('section'); newSection.innerHTML = `
+<h2>Dynamic Content</h2>
+<p>This HTML content was added using JavaScript after the page loaded.</p>
+<ul>
+<li>Item One</li>
+<li>Item Two</li>
+<li>Item Three</li>
+</ul>`; contentDiv.appendChild(newSection);
+</script>
+</body>
+</html>
